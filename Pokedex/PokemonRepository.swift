@@ -15,8 +15,17 @@ struct Api {
     }
 }
 
+protocol PokemonAPIProtocol {
+    //https://pokeapi.co/api/v2/pokemon/limit=1279
+    func getPokemonList(limit: Int) async -> Pokedex?
+    //https://pokeapi.co/api/v2/pokemon/{number_pokemon}/
+    func getPokemonInfo(numberPokemon: Int) async -> Profile?
+}
+
+
 class PokemonRepository: PokemonAPIProtocol {
     let nservice: NetworkAPIService
+    static let shared = PokemonRepository()
     init(nservice: NetworkAPIService = NetworkAPIService.shared) {
         self.nservice = nservice
     }
