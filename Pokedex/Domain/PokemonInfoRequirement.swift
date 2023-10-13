@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 protocol PokemonInfoRequirementProtocol {
     func getPokemonInfo(numberPokemon: Int) async -> Profile?
 }

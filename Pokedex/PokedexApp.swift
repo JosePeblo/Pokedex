@@ -13,7 +13,7 @@ struct PokedexApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CoordinatorView()
         }.onChange(of: scenePhase) { (newScenePhase) in
             switch newScenePhase {
             case .background:
